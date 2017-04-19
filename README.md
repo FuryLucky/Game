@@ -1,4 +1,1 @@
 GameWeek
-
-wow
-gj wp
