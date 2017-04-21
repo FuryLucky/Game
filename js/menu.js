@@ -9,7 +9,12 @@ var menuState = {
       video.play(true);
       //  x, y, anchor x, anchor y, scale x, scale y
       video.addToWorld();
-      
+
+      var TextMenu = game.add.text(20, 10, 'V.1.0.2', { fill: '#010101' });
+      var TextMenu = game.add.text(20, 50, 'F11 pour le pleine ecran', { fill: '#ffffff' });
+      var TextMenu = game.add.text(20, 90, 'Les video peuvent être passer avec le clic de la souri', { fill: '#ffffff' });
+      var TextMenu = game.add.text(20, 130, 'ATTENTION : F5 si les collisions ne marche pas !', { fill: '#FE0101' });
+         
       var button_play = game.add.sprite(game.world.centerX, game.world.centerY-50, 'button_play');
       button_play.anchor.set(0.5);
       var button_credit = game.add.sprite(game.world.centerX, game.world.centerY+50, 'button_credit');

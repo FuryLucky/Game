@@ -1,6 +1,19 @@
 var loadState = {
    preload: function() {
-      var loadingLabel = game.add.text(80, 150, 'chargement...', {font: '30px Courier, fill: #ffffff'});
+
+      var loadingText = game.add.text(200, 270, 'loading... 0%', { fill: '#ffffff' });
+      var progressDisplay = 0;
+      var timerEvt = game.time.events.loop(100, function (){
+            if(progressDisplay < 100){
+                  if(progressDisplay < game.load.progress){
+                        loadingText.text = 'Chargement... '+(++progressDisplay)+'%';
+                  }
+            }
+            else{
+                  loadingText.text = 'Ready, Go!';
+                  game.time.events.remove(timerEvt);
+            }
+      }, this);
 
       game.load.image('background_menu', 'assets/background_menu.png');
       game.load.image('button_exit', 'assets/button_exit.png');
@@ -31,9 +44,10 @@ var loadState = {
       game.load.video('credit', 'assets/credit.mp4');
       game.load.video('fin', 'assets/fin.mp4');
       game.load.video('back', 'assets/back.mp4');
-      game.load.video('back1', 'assets/back1.mp4');
-      game.load.video('back2', 'assets/back2.mp4');
-      game.load.video('back3', 'assets/back3.mp4');
+      // game.load.video('back1', 'assets/back1.mp4');
+      // game.load.video('back2', 'assets/back2.mp4');
+      // game.load.video('back3', 'assets/back3.mp4');
+
    },
 
    create: function() {
